@@ -7,13 +7,13 @@ This is a machine learning-based web application that predicts the price range o
 
 Dataset 
 ![image](https://github.com/user-attachments/assets/1bf366ea-befc-443a-bd8e-7f99ac3f622e)
-🎥 Click the image below to watch the demo video (hosted on YouTube or Google Drive):
+🎥 Click the link below to watch the demo video (hosted on Google Drive):
 
-[![Watch Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE)
+[Watch Demo](https://drive.google.com/file/d/19Y4xytJNVtI2acNoo1MOrT3UkeAhn4Nd/view?usp=sharing)
 
 > 💡 _Not deployed online — this video demonstrates how the app works locally._
 
----
+
 
 ## 🧠 Model Information
 
@@ -22,7 +22,7 @@ Dataset
 - **Training File:** `phone_prediction.ipynb`
 - **Deployed Model:** `LogisticModel.pkl`
 
----
+
 
 ## 🧾 Features Used
 
@@ -49,7 +49,6 @@ Dataset
 | `touch_screen`  | Touch Screen          | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
 | `wifi`          | WiFi                  | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
 
----
 
 ## 🧪 Sample Prediction (From Dataset)
 
@@ -64,7 +63,7 @@ The app correctly predicts price range values from real rows in the dataset:
 
 These cases are shown in the demo video.
 
----
+
 ## 🛠️ How to Run the App
 
 1. **Clone the repository**
