@@ -1,5 +1,6 @@
 # Phone-price-predictor
 
 Dataset 
-![image](https://github.com/user-attachments/assets/5142c5de-e938-4011-bfcf-5eea000d63ff)
+![image](https://github.com/user-attachments/assets/1bf366ea-befc-443a-bd8e-7f99ac3f622e)
+
 
