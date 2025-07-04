@@ -9,8 +9,8 @@ Dataset
 ![image](https://github.com/user-attachments/assets/1bf366ea-befc-443a-bd8e-7f99ac3f622e)
 🎥 Click the link below to watch the demo video (hosted on Google Drive):
 
-[Watch Demo](https://drive.google.com/file/d/19Y4xytJNVtI2acNoo1MOrT3UkeAhn4Nd/view?usp=sharing)
-
+[Watch Demo 1](https://drive.google.com/file/d/19Y4xytJNVtI2acNoo1MOrT3UkeAhn4Nd/view?usp=sharing)
+[Watch Demo 2](https://drive.google.com/file/d/1mvo7wYxkg2ZRTvqGEh5_hpM7eNhZt28B/view?usp=sharing)
 > 💡 _Not deployed online — this video demonstrates how the app works locally._
 
 
