@@ -1,9 +1,9 @@
-# 📱 Mobile Price Range Prediction – ML Project
+#  Mobile Price Range Prediction – ML Project
 
 This is a machine learning-based web application that predicts the price range of a mobile phone (0 to 3) based on features like RAM, battery power, screen size, and more. The model uses Logistic Regression and is served using Flask, with a simple HTML interface for user interaction.
 
 
-## 🚀 Demo
+##  Demo
 
 Dataset 
 ![image](https://github.com/user-attachments/assets/1bf366ea-befc-443a-bd8e-7f99ac3f622e)
@@ -15,7 +15,7 @@ Dataset
 
 
 
-## 🧠 Model Information
+##  Model Information
 
 - **Model Type:** Logistic Regression
 - **Target:** `price_range` (0 = Low, 1 = Medium, 2 = High, 3 = Very High)
@@ -24,7 +24,7 @@ Dataset
 
 
 
-## 🧾 Features Used
+##  Features Used
 
 | Field Name      | Label                 | Type         | Min | Max  | Notes                    |
 | --------------- | --------------------- | ------------ | --- | ---- | ------------------------ |
@@ -50,7 +50,7 @@ Dataset
 | `wifi`          | WiFi                  | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
 
 
-## 🧪 Sample Prediction (From Dataset)
+##  Sample Prediction (From Dataset)
 
 The app correctly predicts price range values from real rows in the dataset:
 
@@ -64,7 +64,7 @@ The app correctly predicts price range values from real rows in the dataset:
 These cases are shown in the demo video.
 
 
-## 🛠️ How to Run the App
+##  How to Run the App
 
 1. **Clone the repository**
    ```bash
