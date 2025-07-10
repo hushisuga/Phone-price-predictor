@@ -22,10 +22,28 @@ Click to watch a short demo of the working project interface:
 
 > Below are screenshots of the deployed model:
 
-- **Input Form** (HTML UI with feature fields)
-  ![text](scrrenshots\img(1).png)
-- **Prediction Output** (Displayed after form submission)
-- **Confusion Matrix** (From evaluation notebook)
+- **Input Form** (HTML UI with feature fields)<br><br>
+  ![front-end](scrrenshots/front_end1.png)
+  
+  ![front-end](scrrenshots/front_end2.png)<br><br><br>
+
+  
+- **Prediction Output** (Displayed after form submission)<br><br>
+  ![first_input](scrrenshots/input1.png)<br>
+  ![first_input](scrrenshots/output1.png)
+---
+  <br><br>
+  ![first_input](scrrenshots/input2.png)<br>
+  ![first_input](scrrenshots/output2.png)
+---
+  <br><br>
+    ![first_input](scrrenshots/input3.png)<br>
+  ![first_input](scrrenshots/output3.png)
+---
+  <br><br><br>
+- **Confusion Matrix** (From evaluation notebook)<br>
+  ![first_input](scrrenshots/confusion_matrix.png)<br>
+
 
 
 
