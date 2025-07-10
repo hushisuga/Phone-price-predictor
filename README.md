@@ -1,90 +1,107 @@
-#  Mobile Price Range Prediction – ML Project
+#  Mobile Price Range Prediction
 
-This is a machine learning-based web application that predicts the price range of a mobile phone (0 to 3) based on features like RAM, battery power, screen size, and more. The model uses Logistic Regression and is served using Flask, with a simple HTML interface for user interaction.
+This machine learning project predicts the price range of a mobile phone based on various technical specifications. It was built as part of an internship project and includes full model training, evaluation, and deployment using Flask.
 
 
-##  Demo
 
-Dataset 
-![image](https://github.com/user-attachments/assets/1bf366ea-befc-443a-bd8e-7f99ac3f622e)
-🎥 Click the link below to watch the demo video (hosted on Google Drive):
+##  Problem Statement
+
+The goal is to predict the price category (range) of a mobile device given its features such as RAM, battery power, screen size, etc. The target variable `price_range` is a multi-class label with four categories (0 to 3).
+
+
+##  Demo Video
+
+Click to watch a short demo of the working project interface:
 
 [Watch Demo 1](https://drive.google.com/file/d/19Y4xytJNVtI2acNoo1MOrT3UkeAhn4Nd/view?usp=sharing)
 [Watch Demo 2](https://drive.google.com/file/d/1mvo7wYxkg2ZRTvqGEh5_hpM7eNhZt28B/view?usp=sharing)
 > 💡 _Not deployed online — this video demonstrates how the app works locally._
 
 
+##  Screenshots
 
-##  Model Information
+> Below are screenshots of the deployed model:
 
-- **Model Type:** Logistic Regression
-- **Target:** `price_range` (0 = Low, 1 = Medium, 2 = High, 3 = Very High)
-- **Training File:** `phone_prediction.ipynb`
-- **Deployed Model:** `LogisticModel.pkl`
-
-
-
-##  Features Used
-
-| Field Name      | Label                 | Type         | Min | Max  | Notes                    |
-| --------------- | --------------------- | ------------ | --- | ---- | ------------------------ |
-| `battery_power` | Battery Power (mAh)   | Number       | 500 | 2000 | Realistic phone battery  |
-| `blue`          | Bluetooth             | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
-| `clock_speed`   | Clock Speed (GHz)     | Float        | 0.5 | 3.0  | e.g., 1.5 GHz            |
-| `dual_sim`      | Dual SIM              | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
-| `four_g`        | 4G Support            | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
-| `three_g`       | 3G Support            | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
-| `fc`            | Front Camera (MP)     | Number       | 0   | 20   | MP (can be 0 if none)    |
-| `int_memory`    | Internal Memory (GB)  | Number       | 2   | 64   | Storage                  |
-| `m_dep`         | Mobile Depth (cm)     | Float        | 0.1 | 1.0  | Depth in cm              |
-| `mobile_wt`     | Mobile Weight (grams) | Number       | 80  | 200  | Typical phone weight     |
-| `n_cores`       | Processor Cores       | Number       | 1   | 8    | Number of cores          |
-| `pc`            | Primary Camera (MP)   | Number       | 0   | 20   | MP                       |
-| `px_height`     | Pixel Height (px)     | Number       | 0   | 1960 | Screen resolution height |
-| `px_width`      | Pixel Width (px)      | Number       | 500 | 2000 | Screen resolution width  |
-| `ram`           | RAM (MB)              | Number       | 256 | 4000 | Memory in MB             |
-| `sc_h`          | Screen Height (cm)    | Number       | 5   | 20   | Screen height            |
-| `sc_w`          | Screen Width (cm)     | Number       | 0   | 18   | Screen width             |
-| `talk_time`     | Talk Time (hours)     | Number       | 2   | 20   | Max supported talk time  |
-| `touch_screen`  | Touch Screen          | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
-| `wifi`          | WiFi                  | Select (0/1) | —   | —    | 1 = Yes, 0 = No          |
-
-
-##  Sample Prediction (From Dataset)
-
-The app correctly predicts price range values from real rows in the dataset:
-
-| Input Row | Predicted Price Category |
-|-----------|--------------------------|
-| Row 1     | 0 → Low Cost             |
-| Row 2     | 1 → Medium Cost          |
-| Row 3     | 2 → High Cost            |
-| Row 4     | 3 → Very High Cost       |
-
-These cases are shown in the demo video.
-
-
-##  How to Run the App
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/phone-price-predictor.git
-   cd phone-price-predictor
-2. **Create virtual environment (optional)**
-   ```bash 
-    python -m venv venv
-    source venv/bin/activate  # Mac/Linux
-    venv\Scripts\activate     # Windows
-3. **Install dependencies**
-   ```bash 
-      pip install -r requirements.txt
-4. **Run the Flask app**
-   ```bash 
-      python main.py
-5. **Visit in browser**
-Go to : http://127.0.0.1:5000
-  
+- **Input Form** (HTML UI with feature fields)
+- **Prediction Output** (Displayed after form submission)
+- **Confusion Matrix** (From evaluation notebook)
 
 
 
 
+##  Dataset Overview
+
+- **Source:** Provided by Unified Mentor (CSV format)
+- **Total Records:** 2000
+- **Target Variable:** `price_range` (0: Low, 1, 2, 3: High)
+- **Feature Types:** Mix of numerical and binary categorical features
+- **Additional Features Created:**
+  - `build_score` = `mobile_wt / m_dep`
+  - `px_area` = `px_height * px_width`
+  - `screen_area` = `sc_h * sc_w`
+
+
+
+##  Data Preprocessing
+
+- Verified no null values
+- Engineered new features and dropped unused columns
+- Applied `StandardScaler` on selected numerical features
+- Binary features were passed as-is
+- Used `train_test_split` (80/20) with stratification
+- Built a full preprocessing + classification pipeline using scikit-learn
+
+
+
+##  Model Building
+
+- **Model Used:** Logistic Regression (`max_iter=1000`, `solver='lbfgs'`)
+- **Pipeline:** Combined preprocessing and model into one scikit-learn pipeline
+- **Model File Saved:** `mobile_price_model.pkl` using Joblib
+
+
+
+## Model Evaluation
+
+- **Accuracy:** 93.75%
+- **Classification Report:**
+  - Precision, Recall, and F1-scores were all high
+  - Best performance on class 0 and 3; slightly lower on class 2
+- **Confusion Matrix:** Visualized to confirm minimal misclassifications
+
+
+
+##  Web Deployment
+
+- Built a web interface using **Flask** and **HTML**
+- User inputs mobile specs via a form on `index.html`
+- On submission, the trained model predicts and displays the price range
+- Flask backend reads user input, loads the model, and returns prediction
+- All development and integration was done in **PyCharm**
+
+
+##  Project Structure
+-  `mobile_price_model.pkl` # Trained model
+-  `index.html` # Frontend form
+-  `app.py` # Flask backend
+- `index.html` # HTML template
+- ` requirements.txt` # Python dependencies
+-  `README.md` # Project overview
+-  `Cleaned_mobile_price_data.csv` #Cleaned dataset
+-  `Phone_price_predictor.ipynb` #model training
+
+
+##  Learnings
+
+- Built complete ML pipeline from scratch
+- Learned about data preprocessing, feature scaling, pipeline integration
+- Implemented real-time model interaction using Flask
+- Understood the end-to-end cycle of model development and deployment
+
+
+##  Future Improvements
+
+- Reduce number of inputs by selecting only high-impact features
+- Improve form design and responsiveness
+- Add more advanced models and perform hyperparameter tuning
+- Host the application publicly (e.g., using Render or Heroku)
